@@ -1,0 +1,13 @@
+Flask
+requests
+requests
+pandas
+plotly
+psycopg2-binary 
+sqlalchemy 
+pulp 
+country_converter
+python-gnupg
+mathplot
+prophet
+scikit-learn==1.3.2

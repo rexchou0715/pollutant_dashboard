@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: bottom;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  
+  /* Creator Names */
+  .creator-names {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .progress_bar{
+    display: flex;
+  }
+
+  .gauge{
+    flex: 1;
+    margin: 5px;
+    line-height: 100px;
+  }
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}

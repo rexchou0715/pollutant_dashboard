@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="/dashboard/images/favicon.png">
+    <title>DSS project</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Air Quality Indexes</h1>
+        <p>X6: Development group</p>
+
+        <div id="city-dropdown">
+            <label for="city">Select city:</label>
+            <select id="city">
+                <option value="Amsterdam">Amsterdam</option>
+                <option value="Brussels">Brussels</option>
+                <option value="Helsinki">Helsinki</option>
+                <option value="London">London</option>
+                <option value="Paris">Paris</option>
+            </select>
+        
+        </div>
+        <div id="world_map_container">
+            {{ world_map_content_html | safe }}
+        </div>
+
+        <div id="historic>al_data_comparison_container">
+            {{ historical_data_comparison_html | safe }}
+        </div>
+        <div id="country_level_container">
+            {{ country_pollutant_data_html | safe }}
+        </div>
+        <div id="realtime_data_container">
+            {{ realtime_table_content_html | safe }}
+        </div>
+
+        <div class="progress_bar">
+            <div id="pm25_gauge_container" class="gauge">{{ pm25_gauge_content | safe}}</div>
+            <div id="pm10_gauge_container" class="gauge">{{ pm10_gauge_content | safe}}</div>
+            <div id="o3_gauge_container" class="gauge">{{ o3_gauge_content | safe}}</div>
+            <div id="no2_gauge_container" class="gauge">{{ no2_gauge_content | safe}}</div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            const dropdown = document.getElementById("city");
+            
+            dropdown.addEventListener("change", function() {
+                const selectedValue = dropdown.options[dropdown.selectedIndex].value;
+        
+                $.ajax({
+                    type: "POST",
+                    url: "/city",
+                    contentType: "application/json",
+                    data: JSON.stringify({ selectedValue: selectedValue }),
+                    success: function(data) {
+                        $("#country_level_container").html(data.historical_data);
+                        $("#realtime_data_container").html(data.realtime_data_content);
+                        $("#pm25_gauge_container").html(data.pm25_gauge);
+                        $("#pm10_gauge_container").html(data.pm10_gauge);
+                        $("#o3_gauge_container").html(data.o3_gauge);
+                        $("#no2_gauge_container").html(data.no2_gauge);
+                    },
+                    error: function(error) {
+                        console.error('Error!!:', error);
+                    }
+                });
+            });
+        </script>
+        
+
+    </div>
+
+
+</body>
+</html>

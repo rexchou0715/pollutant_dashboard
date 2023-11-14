@@ -1,2 +1,6 @@
 # pollutant_dashboard
-This is the project from one of my master courses in Utrecht University. The aim of this dashboard is to provide information about pollutant data in 5 European countries, including Amsterdam, Brussels, Paris, London, and Helsinki. The dashboard displays the historical pollutant data, containing pm2.5, pm10, NO2, and O3. In addition, the dashboard also shows the real-time pollutant level.
+This is the project from one of my master's courses at Utrecht University. The aim of this dashboard is to provide information about pollutant data in 5 European countries, including Amsterdam, Brussels, Paris, London, and Helsinki. The dashboard displays the historical pollutant data, containing pm2.5, pm10, NO2, and O3. In addition, the dashboard also shows the real-time pollutant level.
+
+My colleague: Nils Idema, Kessidis Nikos, Rhea Gupta, Kalliopi Fragkoudaki, and Moïse Veldema.
+
+

@@ -500,8 +500,7 @@ def _get_realtime_data(city):
     querystring = {"city":city}
 
     api_keys = [
-        "cdc9fe6e89msh067af6415380559p1dd840jsncb11d7a4afb4",
-        "b11da3ffe1msh2ad3980cc80c016p18c9c1jsn9e9ec4649b96"
+        "Your API_KEY"
         ]
     
     for api_key in api_keys:
